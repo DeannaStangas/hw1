@@ -134,8 +134,7 @@ CREATE TABLE studios (
 
 CREATE TABLE actors (
    id INTEGER PRIMARY KEY AUTOINCREMENT,
-   first_name TEXT,
-   last_name TEXT
+   name TEXT
 );
 
 CREATE TABLE roles(
@@ -156,19 +155,19 @@ VALUES
 INSERT INTO studios(name)
 VALUES ("Warner Bros.");
 
-INSERT INTO actors(first_name, last_name)
+INSERT INTO actors(name)
 VALUES 
-    ("Christian", "Bale"),
-    ("Michael", "Caine"),
-    ("Liam", "Neeson"),
-    ("Katie", "Holmes"),
-    ("Gary", "Oldman"),
-    ("Heath", "Ledger"),
-    ("Aaron", "Eckhart"),
-    ("Maggie", "Gyllenhaal"),
-    ("Tom", "Hardy"),
-    ("Joseph", "Gordon-Levitt"),
-    ("Anne", "Hathaway");
+    ("Christian Bale"),
+    ("Michael Caine"),
+    ("Liam Neeson"),
+    ("Katie Holmes"),
+    ("Gary Oldman"),
+    ("Heath Ledger"),
+    ("Aaron Eckhart"),
+    ("Maggie Gyllenhaal"),
+    ("Tom Hardy"),
+    ("Joseph Gordon-Levitt"),
+    ("Anne Hathaway");
 
 INSERT INTO roles(movie_id, actor_id, character_name)
 VALUES
@@ -201,7 +200,7 @@ INNER JOIN studios ON movies.studio_id = studios.id;
 .print "Top Cast"
 .print "========"
 .print ""
-SELECT movies.title, actors.first_name, actors.last_name, character_name from roles
+SELECT movies.title, actors.name, character_name from roles
 INNER JOIN movies ON movies.id=roles.movie_id
 INNER JOIN actors ON actors.id=roles.actor_id;
 -- The SQL statement for the cast output
