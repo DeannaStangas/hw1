@@ -201,5 +201,8 @@ INNER JOIN studios ON movies.studio_id = studios.id;
 .print "Top Cast"
 .print "========"
 .print ""
+SELECT movies.title, actors.first_name, actors.last_name, character_name from roles
+INNER JOIN movies ON movies.id=roles.movie_id
+INNER JOIN actors ON actors.id=roles.actor_id;
 -- The SQL statement for the cast output
 -- TODO!
