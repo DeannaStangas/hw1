@@ -181,12 +181,12 @@ VALUES
     (2,6, "Joker"),
     (2,7, "Harvey Dent"),
     (2,2, "Alfred"),
-    (2,4, "Rachel Dawes"),
+    (2,8, "Rachel Dawes"),
     (3,1, "Bruce Wayne"),
     (3,5, "Commissioner Gordon"),
-    (3, 8, "Bane")
-    (3,9, "John Blake"),
-    (3,10, "Selina Kyle");
+    (3, 9, "Bane")
+    (3,10, "John Blake"),
+    (3,11, "Selina Kyle");
     
 -- Prints a header for the movies output
 .print "Movies"
@@ -197,12 +197,9 @@ INNER JOIN studios ON movies.studio_id = studios.id;
 -- The SQL statement for the movies output
 -- TODO!
 -- Prints a header for the cast output
--- .print ""
--- .print "Top Cast"
--- .print "========"
--- .print ""
--- SELECT movies.title, actors.first_name, actors.last_name, character_name from roles
--- INNER JOIN movies ON movies.id=roles.movie_id
--- INNER JOIN actors ON actors.id=roles.actor_id;
+.print ""
+.print "Top Cast"
+.print "========"
+.print ""
 -- The SQL statement for the cast output
 -- TODO!
