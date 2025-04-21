@@ -147,21 +147,62 @@ CREATE TABLE roles(
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
+INSERT INTO movies(title, year_released, MPAA_rating, studio_id)
+VALUES
+    ("Batman Begins", 2005, "PG-13", 1),
+    ("The Dark Knight", 2008, "PG-13", 1),
+    ("The Dark Knight Rises", 2012, "PG-13", 1);
 
+INSERT INTO studios(name)
+VALUES ("Warner Bros.");
+
+INSERT INTO actors(first_name, last_name)
+VALUES 
+    ("Christian", "Bale"),
+    ("Michael", "Caine"),
+    ("Liam", "Neeson"),
+    ("Katie", "Holmes"),
+    ("Gary", "Oldman"),
+    ("Heath", "Ledger"),
+    ("Aaron", "Eckhart"),
+    ("Maggie", "Gyllenhaal"),
+    ("Tom", "Hardy"),
+    ("Joseph", "Gordon-Levitt"),
+    ("Anne", "Hathaway");
+
+INSERT INTO roles(movie_id, actor_id, character_name)
+VALUES
+    (1,1, "Bruce Wayne"),
+    (1,2, "Alfred"),
+    (1,3, "Ra's Al Ghul"),
+    (1,4, "Rachel Dawes"),
+    (1,5, "Commisioner Gordon"),
+    (2,1, "Bruce Wayne"),
+    (2,6, "Joker"),
+    (2,7, "Harvey Dent"),
+    (2,2, "Alfred"),
+    (2,4, "Rachel Dawes"),
+    (3,1, "Bruce Wayne"),
+    (3,5, "Commissioner Gordon"),
+    (3, 8, "Bane")
+    (3,9, "John Blake"),
+    (3,10, "Selina Kyle");
+    
 -- Prints a header for the movies output
 .print "Movies"
 .print "======"
 .print ""
-
+SELECT title, year_released, MPAA_rating, studios.name from movies
+INNER JOIN studios ON movies.studio_id = studios.id;
 -- The SQL statement for the movies output
 -- TODO!
-
 -- Prints a header for the cast output
-.print ""
-.print "Top Cast"
-.print "========"
-.print ""
-
-
+-- .print ""
+-- .print "Top Cast"
+-- .print "========"
+-- .print ""
+-- SELECT movies.title, actors.first_name, actors.last_name, character_name from roles
+-- INNER JOIN movies ON movies.id=roles.movie_id
+-- INNER JOIN actors ON actors.id=roles.actor_id;
 -- The SQL statement for the cast output
 -- TODO!
